@@ -39,5 +39,5 @@ jobs:
       - name: Upload built jar
         uses: actions/upload-artifact@v4
         with:
-          name: ArmorTweaks-jar-v3
+          name: ArmorTweaks-jar-v2
           path: build/libs/*.jar
