@@ -19,5 +19,6 @@ public class ArmorTweaksMod {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new ArmorEventHandler());
+        ArmorStatsHandler.applyOverrides();
     }
 }
