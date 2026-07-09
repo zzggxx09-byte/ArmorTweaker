@@ -10,7 +10,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
 import net.minecraftforge.event.entity.living.LivingFallEvent;
-import net.minecraftforge.event.entity.living.LivingUpdateEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ArmorEventHandler {
@@ -77,7 +77,7 @@ public class ArmorEventHandler {
     private boolean isLeather(ItemStack stack) {
         if (stack == null || !(stack.getItem() instanceof ItemArmor)) return false;
         ItemArmor armor = (ItemArmor) stack.getItem();
-        return armor.getArmorMaterial() == ItemArmor.ArmorMaterial.LEATHER;
+        return armor.getArmorMaterial() == ItemArmor.ArmorMaterial.CLOTH;
     }
 
     private boolean isIron(ItemStack stack) {
