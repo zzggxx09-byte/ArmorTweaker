@@ -24,8 +24,14 @@ jobs:
           gradle-version: 2.14
           cache-disabled: true
 
-      - name: Setup decompiled workspace
-        run: gradle setupDecompWorkspace --no-daemon
+      - name: Build mod
+        run: gradle build --no-daemon
+
+      - name: Upload built jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: ArmorTweaks-jar
+          path: build/libs/*.jar
 
       - name: Build mod
         run: gradle build --no-daemon
