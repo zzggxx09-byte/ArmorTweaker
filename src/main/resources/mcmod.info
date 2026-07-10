@@ -7,5 +7,14 @@
   "mcversion": "1.7.10",
   "authorList": ["you"],
   "credits": "Зроблено для збірки"
+},
+{
+  "modid": "xphearts",
+  "name": "XP Hearts",
+  "description": "Прокачує кількість сердець за отриманий досвід.",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "authorList": ["you"],
+  "credits": "Зроблено для збірки"
 }
 ]
