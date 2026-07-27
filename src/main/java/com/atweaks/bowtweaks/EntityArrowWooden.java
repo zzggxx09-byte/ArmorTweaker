@@ -1,5 +1,7 @@
 package com.atweaks.bowtweaks;
 
+import java.lang.reflect.Field;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
@@ -21,11 +23,20 @@ public class EntityArrowWooden extends EntityArrow {
         this.setDamage(ConfigHandler.woodenArrowDamage);
     }
 
-    // Перевизначено, щоб при підбиранні гравець отримував НАШУ дерев'яну стрілу,
-    // а не ванільну net.minecraft.init.Items.arrow
+    // inGround приватне в EntityArrow - читаємо рефлексією
+    private boolean isInGroundSafe() {
+        try {
+            Field field = EntityArrow.class.getDeclaredField("inGround");
+            field.setAccessible(true);
+            return field.getBoolean(this);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     @Override
     public void onCollideWithPlayer(EntityPlayer player) {
-        if (!this.worldObj.isRemote && this.inGround && this.arrowShake <= 0) {
+        if (!this.worldObj.isRemote && isInGroundSafe() && this.arrowShake <= 0) {
             boolean canPickup = this.canBePickedUp == 1
                     || (this.canBePickedUp == 2 && player.capabilities.isCreativeMode);
 
