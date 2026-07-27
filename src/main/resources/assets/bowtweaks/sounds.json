@@ -1,0 +1,26 @@
+{
+  "small_bow_draw": {
+    "category": "player",
+    "sounds": [
+      { "name": "bowtweaks:small_bow_draw", "stream": false }
+    ]
+  },
+  "small_bow_shoot": {
+    "category": "player",
+    "sounds": [
+      { "name": "bowtweaks:small_bow_shoot", "stream": false }
+    ]
+  },
+  "professional_bow_draw": {
+    "category": "player",
+    "sounds": [
+      { "name": "bowtweaks:professional_bow_draw", "stream": false }
+    ]
+  },
+  "professional_bow_shoot": {
+    "category": "player",
+    "sounds": [
+      { "name": "bowtweaks:professional_bow_shoot", "stream": false }
+    ]
+  }
+}
