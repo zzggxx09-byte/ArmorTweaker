@@ -13,8 +13,7 @@ public class ItemArrowWooden extends Item {
     }
 
     @Override
-    public void registerIcons(IIconRegister iconRegister) {
-        // Немає власної текстури — беремо ванільну текстуру стріли
-        this.itemIcon = iconRegister.registerIcon("minecraft:arrow");
+public void registerIcons(IIconRegister iconRegister) {
+    this.itemIcon = IconHelper.register(iconRegister, "bowtweaks", "arrow_wooden", "minecraft:arrow");
     }
 }
